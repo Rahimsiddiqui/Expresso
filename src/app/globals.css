@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark, .dark *));
+
+/**
+ * Global Tailwind Theme Overrides
+ * Customizes colors and font families for the project.
+ */
+@theme {
+  /* Dynamic Color Palette */
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-highlight: #f1f5f9;
+  --color-primary: #4f46e5;
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-border: rgba(0, 0, 0, 0.05);
+
+  /* Font Configurations */
+  --font-geist-sans: var(--font-geist-sans), sans-serif;
+  --font-inter: var(--font-inter), monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/**
+ * Base Layer Styles
+ * Resets and default element behavior.
+ */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Dark Mode Overrides */
+  html.dark,
+  html.dark * {
+    color-scheme: dark;
+    --color-background: #031427;
+    --color-surface: #0b1c30;
+    --color-surface-highlight: #2a3a4f;
+    --color-primary: #6366f1;
+    --color-text: #f8fafc;
+    --color-text-secondary: #94a3b8;
+    --color-border: rgba(255, 255, 255, 0.1);
+  }
+
+  html,
+  body {
+    height: 100%;
+    font-family: var(--font-inter);
+    background: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease;
+    scrollbar-gutter: stable;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/**
+ * Base Layer Styles
+ * Resets and default element behavior.
+ */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
