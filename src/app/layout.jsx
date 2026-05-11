@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/context/ThemeContext";
 import { Geist, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -24,7 +25,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="antialiased overflow-y-auto overflow-x-hidden!">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
