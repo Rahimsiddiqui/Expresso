@@ -8,7 +8,6 @@
  */
 @theme {
   /* Dynamic Color Palette */
-  --color-background: #f8fafc;
   --color-surface: #ffffff;
   --color-surface-highlight: #f1f5f9;
   --color-primary: #4f46e5;
@@ -36,7 +35,6 @@
   html.dark,
   html.dark * {
     color-scheme: dark;
-    --color-background: #031427;
     --color-surface: #0b1c30;
     --color-surface-highlight: #2a3a4f;
     --color-primary: #6366f1;
@@ -49,7 +47,7 @@
   body {
     height: 100%;
     font-family: var(--font-inter);
-    background: var(--color-background);
+    background: var(--color-surface);
     color: var(--color-text);
     line-height: 1.5;
     scroll-behavior: smooth;
