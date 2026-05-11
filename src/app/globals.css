@@ -54,7 +54,6 @@
     line-height: 1.5;
     scroll-behavior: smooth;
     transition: background-color 0.3s ease;
-    scrollbar-gutter: stable;
   }
 }
 
@@ -64,7 +63,6 @@
  */
 a {
   text-decoration: none;
-  color: inherit;
 }
 
 ul,
